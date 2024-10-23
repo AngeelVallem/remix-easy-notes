@@ -8,7 +8,7 @@ import {
 import type { LinksFunction } from "@remix-run/node";
 import { layout } from "./styles/theme.css";
 import "./styles/reset.css";
-import Header from "./compoents/template/Header";
+import Header from "./components/template/Header";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },

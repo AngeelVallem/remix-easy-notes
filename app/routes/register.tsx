@@ -58,11 +58,15 @@ export async function action({ request }: ActionFunctionArgs) {
     return payload.error.formErrors;
   }
 
-  const userId = registerUser(payload.data.email, payload.data.password);
+  const user = await registerUser({
+    email: payload.data.email,
+    username: payload.data.username,
+    password: payload.data.password,
+  });
 
-  session.set("userId", 1);
-  session.set("email", payload.data.email);
-  session.set("username", payload.data.username);
+  session.set("userId", user.id);
+  session.set("email", user.email);
+  session.set("username", user.username);
 
   return redirect("/", {
     headers: {

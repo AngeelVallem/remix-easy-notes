@@ -41,8 +41,10 @@ globalStyle("body, html", {
   boxSizing: "border-box",
   height: "100vh",
   scrollBehavior: "smooth",
-  color: vars.color.baseBg,
+  backgroundColor: vars.color.baseBg,
+  color: vars.color.baseForeground,
   display: "grid",
   gridTemplateRows: "auto 1fr auto",
   gridTemplateColumns: "1fr",
+  padding: vars.space.md,
 });

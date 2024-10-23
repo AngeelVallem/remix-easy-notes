@@ -30,7 +30,6 @@ export const layout = style([
   container,
   {
     width: "100%",
-    padding: vars.space.md,
     backgroundColor: vars.color.baseBg,
   },
 ]);

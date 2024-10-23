@@ -1,7 +1,9 @@
-import { createCookie, redirect } from "@remix-run/node";
-import { getSession } from "~/session";
+type RegisterPayload = {
+  email: string;
+  username: string;
+  password: string;
+};
 
-export async function registerUser(email: string, password: string) {
-  return { id: 1 };
+export async function registerUser(payload: RegisterPayload) {
+  return { email: payload.email, username: payload.username, id: 1 };
 }
-

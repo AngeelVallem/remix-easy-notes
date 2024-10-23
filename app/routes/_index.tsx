@@ -1,9 +1,5 @@
-import {
-  redirect,
-  type LoaderFunctionArgs,
-  type MetaFunction,
-} from "@remix-run/node";
-import { getSession, requireSession } from "~/session";
+import { type LoaderFunctionArgs, type MetaFunction } from "@remix-run/node";
+import { requireSession } from "~/session";
 
 export const meta: MetaFunction = () => {
   return [
