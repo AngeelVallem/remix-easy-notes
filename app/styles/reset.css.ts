@@ -37,7 +37,12 @@ globalStyle("input, button, textarea, select", {
 });
 
 globalStyle("body, html", {
-  height: "100%",
+  margin: 0,
+  boxSizing: "border-box",
+  height: "100vh",
   scrollBehavior: "smooth",
   color: vars.color.baseBg,
+  display: "grid",
+  gridTemplateRows: "auto 1fr auto",
+  gridTemplateColumns: "1fr",
 });

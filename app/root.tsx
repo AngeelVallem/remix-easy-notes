@@ -6,8 +6,9 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
-import { container } from "./styles/theme.css";
+import { layout } from "./styles/theme.css";
 import "./styles/reset.css";
+import Header from "./compoents/template/Header";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -32,7 +33,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+        <Header />
         {children}
+        <footer>footer</footer>
         <ScrollRestoration />
         <Scripts />
       </body>
@@ -42,7 +45,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return (
-    <main className={container}>
+    <main className={layout}>
       <Outlet />
     </main>
   );

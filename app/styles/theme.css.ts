@@ -22,14 +22,15 @@ export const vars = createGlobalTheme(":root", {
   },
 });
 
-export const container = style({
+const container = style({
   width: "100vw",
-  minHeight: "100vh",
 });
 
-export const layout = style({
-  width: "100%",
-  height: "100vh",
-  padding: vars.space.md,
-  backgroundColor: vars.color.baseBg,
-});
+export const layout = style([
+  container,
+  {
+    width: "100%",
+    padding: vars.space.md,
+    backgroundColor: vars.color.baseBg,
+  },
+]);

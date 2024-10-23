@@ -1,4 +1,9 @@
-import type { MetaFunction } from "@remix-run/node";
+import {
+  redirect,
+  type LoaderFunctionArgs,
+  type MetaFunction,
+} from "@remix-run/node";
+import { getSession, requireSession } from "~/session";
 
 export const meta: MetaFunction = () => {
   return [
@@ -11,3 +16,6 @@ export default function Index() {
   return <div></div>;
 }
 
+export async function Loader({ request }: LoaderFunctionArgs) {
+  return await requireSession(request);
+}
